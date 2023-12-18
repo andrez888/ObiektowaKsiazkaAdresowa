@@ -4,39 +4,53 @@ void AdresatManager::ustawIdZalogowanegoUzytkownika(int id){
     idZalogowanegoUzytkownika = id;
 
 }
-void Adresat::dodajAdresata(){
+int AdresatManager::pobierzIdZalogowanegoUzytkownika(){
+    return idZalogowanegoUzytkownika;
+}
+void AdresatManager::ustawIdOstatniegoAdresata(int id){
+    idOstatniegoAdresata = id;
+}
+int AdresatManager::pobierzIdOstatniegoAdresata(){
+    return idOstatniegoAdresata;
+}
+Adresat AdresatManager::podajDaneNowegoAdresata()
+{
+    Adresat adresat;
+
+    adresat.ustawId(pobierzIdOstatniegoAdresata() + 1);
+
+    adresat.ustawIdUzytkownika(pobierzIdZalogowanegoUzytkownika());
+
+    cout << "Podaj imie: ";
+    adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
+   // adresat.imie = zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.imie);
+
+    cout << "Podaj nazwisko: ";
+    adresat.ustawNazwisko(MetodyPomocnicze ::wczytajLinie());
+    //adresat.nazwisko = zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.nazwisko);
+
+    cout << "Podaj numer telefonu: ";
+    adresat.ustawNumerTelefonu(MetodyPomocnicze::wczytajLinie());
+
+    cout << "Podaj email: ";
+    adresat.ustawEmail(MetodyPomocnicze::wczytajLinie());
+
+    cout << "Podaj adres: ";
+    adresat.ustawAdres(MetodyPomocnicze::wczytajLinie());
+
+    return adresat;
+}
+
+void AdresatManager::dodajAdresata(){
 
     Adresat adresat;
 
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    adresat = podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
-    dopiszAdresataDoPliku(adresat);
+    //dopiszAdresataDoPliku(adresat);
+    ustawIdOstatniegoAdresata(pobierzIdOstatniegoAdresata()+1);
 
-    return ++idOstatniegoAdresata;
-}
-int pobierzZPlikuIdOstatniegoAdresata()
-{
-    int idOstatniegoAdresata = 0;
-    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
-    string daneOstaniegoAdresataWPliku = "";
-    fstream plikTekstowy;
-    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
-
-    if (plikTekstowy.good() == true)
-    {
-        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {}
-            daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
-            plikTekstowy.close();
-    }
-    else
-        cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
-
-    if (daneOstaniegoAdresataWPliku != "")
-    {
-        idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
-    }
-    return idOstatniegoAdresata;
 }
