@@ -8,16 +8,20 @@
 #include <sstream>
 
 #include "UzytkownikManager.h"
+#include "AdresatManager.h"
 
 using namespace std;
 
 class KsiazkaAdresowa{
  UzytkownikManager uzytkownikManager;
+ AdresatManager adresatManager;
  public:
-     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikManager(nazwaPlikuZUzytkownikami){
+     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami,string nazwaPlikuZAdresatami) : uzytkownikManager(nazwaPlikuZUzytkownikami), adresatManager(nazwaPlikuZAdresatami){
         uzytkownikManager.wczytajUzytkownikowZPliku();
      };
      void rejestracjaUzytkownika();
+     void logowanieuzytkownika();
      void wypiszWszytskichUzytkownikow();
+     void dodajAdresata();
 };
 #endif
