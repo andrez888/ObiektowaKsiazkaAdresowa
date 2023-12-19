@@ -20,7 +20,8 @@ class AdresatManager {
     Adresat podajDaneNowegoAdresata();
 
 public:
-    AdresatManager(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami){};
+    AdresatManager(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami){
+    };
      void rejestracjaUzytkownika();
     void ustawIdZalogowanegoUzytkownika(int id);
     int pobierzIdZalogowanegoUzytkownika();
@@ -28,6 +29,7 @@ public:
     int pobierzZPlikuIdOstatniegoAdresata();
     void ustawIdOstatniegoAdresata(int id);
     int pobierzIdOstatniegoAdresata();
+    void wczytajAdresatowZalogowanegoUzytkownika();
 };
 
 #endif

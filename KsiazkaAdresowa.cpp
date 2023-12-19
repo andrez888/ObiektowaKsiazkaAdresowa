@@ -9,6 +9,7 @@ void  KsiazkaAdresowa :: wypiszWszytskichUzytkownikow(){
 void KsiazkaAdresowa::logowanieuzytkownika(){
     uzytkownikManager.logowanieUzytkownika();
     adresatManager.ustawIdZalogowanegoUzytkownika(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+    adresatManager.wczytajAdresatowZalogowanegoUzytkownika();
 }
 void KsiazkaAdresowa::dodajAdresata(){
     adresatManager.dodajAdresata();
