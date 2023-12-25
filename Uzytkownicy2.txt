@@ -1,8 +1,4 @@
-1|marek|andrzej|
+1|marek|1234|
 2|arek|1234|
 3|marian|1234|
 4|jurek|1233|
-5|mirek|1234|
-6|1234|23|
-7|adam|1234|
-8|andrzej|1234|

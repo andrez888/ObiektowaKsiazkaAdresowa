@@ -57,10 +57,11 @@ void UzytkownikManager::wczytajUzytkownikowZPliku(){
 void UzytkownikManager::ustawIdZalogowanegoUzytkownika(int id ){
     idZalogowanegoUzytkownika = id;
 }
-int UzytkownikManager::logowanieUzytkownika(){
+void UzytkownikManager::logowanieUzytkownika(){
 
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
+    ustawIdZalogowanegoUzytkownika(0);
 
     cout << endl << "Podaj login: ";
     login = MetodyPomocnicze::wczytajLinie();
@@ -76,15 +77,16 @@ int UzytkownikManager::logowanieUzytkownika(){
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
                  ustawIdZalogowanegoUzytkownika(uzytkownicy[i].pobierzId());
-                 return pobierzIdZalogowanegoUzytkownika();
+                 return;
                 }
         }
 
     }
     }
-    cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+    if(pobierzIdZalogowanegoUzytkownika() == 0){
+        cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
-    return -1;
+    }
 }
 int UzytkownikManager::pobierzIdZalogowanegoUzytkownika(){
     return idZalogowanegoUzytkownika;

@@ -1,0 +1,4 @@
+1|1|andrzej|piontek|21|132|132|
+2|1|agata|lewa|43|43|43|
+3|1|jurek|wlodarz|12|134|143|
+4|1|marian|pazdzuiocj|31|43|43|
