@@ -1,28 +1,32 @@
 #include "KsiazkaAdresowa.h"
 
-void KsiazkaAdresowa::rejestracjaUzytkownika(){
+void KsiazkaAdresowa::rejestracjaUzytkownika() {
     uzytkownikManager.rejestracjaUzytkownika();
 }
-void  KsiazkaAdresowa :: wypiszWszytskichUzytkownikow(){
+void  KsiazkaAdresowa :: wypiszWszytskichUzytkownikow() {
     uzytkownikManager.wypiszWszytskichUzytkownikow();
 }
-void KsiazkaAdresowa::logowanieuzytkownika(){
+void KsiazkaAdresowa::logowanieuzytkownika() {
     uzytkownikManager.logowanieUzytkownika();
-    adresatManager.ustawIdZalogowanegoUzytkownika(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
-    adresatManager.wczytajAdresatowZalogowanegoUzytkownika();
+    if(uzytkownikManager.pobierzIdZalogowanegoUzytkownika() != 0) {
+        adresatManager.ustawIdZalogowanegoUzytkownika(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+        adresatManager.wczytajAdresatowZalogowanegoUzytkownika();
+    }
 }
-void KsiazkaAdresowa::dodajAdresata(){
+void KsiazkaAdresowa::dodajAdresata() {
     adresatManager.dodajAdresata();
 }
-void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(){
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
     uzytkownikManager.zmianaHasla();
 }
-void KsiazkaAdresowa::wyswietlWszystkichAdresatow(){
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
     adresatManager.wyswietlWszystkichAdresatow();
 }
-void KsiazkaAdresowa::wylogowywanieUzytkownika(){
+void KsiazkaAdresowa::wylogowywanieUzytkownika() {
     adresatManager.wylogowywanieUzytkownika();
     uzytkownikManager.ustawIdZalogowanegoUzytkownika(0);
+    cout << "Zostales wylogowany"<<endl;
+    system("pause");
 }
 
 

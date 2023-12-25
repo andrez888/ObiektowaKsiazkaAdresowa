@@ -27,7 +27,9 @@ class UzytkownikManager{
 public:
     void ustawIdZalogowanegoUzytkownika(int id);
     int pobierzIdZalogowanegoUzytkownika();
-    UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
+    UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){
+        idZalogowanegoUzytkownika = 0;
+    };
      void rejestracjaUzytkownika();
     void wypiszWszytskichUzytkownikow();
     void wczytajUzytkownikowZPliku();

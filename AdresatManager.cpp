@@ -87,6 +87,6 @@ void AdresatManager::wyswietlDaneAdresata(Adresat adresat)
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
 void AdresatManager::wylogowywanieUzytkownika(){
-    adresaci.empty();
+    adresaci.clear();
     ustawIdZalogowanegoUzytkownika(0);
 }

@@ -2,3 +2,6 @@
 2|1|agata|lewa|43|43|43|
 3|1|jurek|wlodarz|12|134|143|
 4|1|marian|pazdzuiocj|31|43|43|
+5|5|marian|pazdzioch|13|14|41|
+6|5|marlena|rutk|432|423|423|
+7|5|juzek|stfean|4432|423|42|

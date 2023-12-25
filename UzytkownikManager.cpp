@@ -61,7 +61,6 @@ void UzytkownikManager::logowanieUzytkownika(){
 
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
-    ustawIdZalogowanegoUzytkownika(0);
 
     cout << endl << "Podaj login: ";
     login = MetodyPomocnicze::wczytajLinie();
@@ -80,13 +79,14 @@ void UzytkownikManager::logowanieUzytkownika(){
                  return;
                 }
         }
+                cout << "Podano 3 razy bledne haslo" <<endl;
+                system("pause");
+                return;
+    }
+    }
 
-    }
-    }
-    if(pobierzIdZalogowanegoUzytkownika() == 0){
         cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
-    }
 }
 int UzytkownikManager::pobierzIdZalogowanegoUzytkownika(){
     return idZalogowanegoUzytkownika;
