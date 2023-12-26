@@ -5,3 +5,6 @@
 5|5|marian|pazdzioch|13|14|41|
 6|5|marlena|rutk|432|423|423|
 7|5|juzek|stfean|4432|423|42|
+8|1|hans|klos|12|132|13|
+9|5|marlena|rucinska|123|123|123|
+10|5|hans|klos|213|123|31|

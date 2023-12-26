@@ -50,6 +50,7 @@ void UzytkownikManager::wypiszWszytskichUzytkownikow(){
         cout <<endl <<uzytkownik.pobierzLogin();
         cout << endl <<uzytkownik.pobierzHaslo() <<endl;
     }
+    system("pause");
 }
 void UzytkownikManager::wczytajUzytkownikowZPliku(){
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();

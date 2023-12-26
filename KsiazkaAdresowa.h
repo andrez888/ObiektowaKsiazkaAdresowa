@@ -9,6 +9,7 @@
 
 #include "UzytkownikManager.h"
 #include "AdresatManager.h"
+#include "MetodyPomocnicze.h"
 
 using namespace std;
 
@@ -20,12 +21,15 @@ class KsiazkaAdresowa{
         uzytkownikManager.wczytajUzytkownikowZPliku();
      };
      void rejestracjaUzytkownika();
-     void logowanieuzytkownika();
+     void logowanieUzytkownika();
      void wypiszWszytskichUzytkownikow();
      void dodajAdresata();
      void zmianaHaslaZalogowanegoUzytkownika();
      void wyswietlWszystkichAdresatow();
      void wylogowywanieUzytkownika();
+     void menu();
+     char wybierzOpcjeZMenuGlownego();
+     char wybierzOpcjeZMenuUzytkownika();
 
 };
 #endif
