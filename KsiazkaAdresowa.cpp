@@ -8,17 +8,14 @@ void  KsiazkaAdresowa :: wypiszWszytskichUzytkownikow() {
 }
 void KsiazkaAdresowa::logowanieUzytkownika() {
     uzytkownikManager.logowanieUzytkownika();
-    if(uzytkownikManager.pobierzIdZalogowanegoUzytkownika() != 0) {
         adresatManager.ustawIdZalogowanegoUzytkownika(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
         adresatManager.wczytajAdresatowZalogowanegoUzytkownika();
-    }
 }
 void KsiazkaAdresowa::dodajAdresata() {
     adresatManager.dodajAdresata();
 }
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
     uzytkownikManager.zmianaHasla();
-    system("pause");
 }
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
     adresatManager.wyswietlWszystkichAdresatow();

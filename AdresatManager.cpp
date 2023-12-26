@@ -55,8 +55,10 @@ void AdresatManager::dodajAdresata(){
 
 }
 void AdresatManager::wczytajAdresatowZalogowanegoUzytkownika(){
-    ustawIdOstatniegoAdresata(plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata());
+    if(idZalogowanegoUzytkownika!=0){
+        ustawIdOstatniegoAdresata(plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata());
      adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(pobierzIdZalogowanegoUzytkownika());
+    }
 }
 void AdresatManager::wyswietlWszystkichAdresatow()
 {

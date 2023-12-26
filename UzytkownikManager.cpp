@@ -76,7 +76,7 @@ void UzytkownikManager::logowanieUzytkownika(){
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                 ustawIdZalogowanegoUzytkownika(uzytkownicy[i].pobierzId());
+                 idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
                  return;
                 }
         }
@@ -104,7 +104,7 @@ void UzytkownikManager::zmianaHasla()
         uzytkownicy[i].ustawHaslo(noweHaslo);
     }
    }
-
+    system("pause");
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
