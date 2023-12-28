@@ -8,8 +8,8 @@ void  KsiazkaAdresowa :: wypiszWszytskichUzytkownikow() {
 }
 void KsiazkaAdresowa::logowanieUzytkownika() {
     uzytkownikManager.logowanieUzytkownika();
-        adresatManager.ustawIdZalogowanegoUzytkownika(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
-        adresatManager.wczytajAdresatowZalogowanegoUzytkownika();
+    adresatManager.ustawIdZalogowanegoUzytkownika(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+    adresatManager.wczytajAdresatowZalogowanegoUzytkownika();
 }
 void KsiazkaAdresowa::dodajAdresata() {
     adresatManager.dodajAdresata();
@@ -26,24 +26,21 @@ void KsiazkaAdresowa::wylogowywanieUzytkownika() {
     cout << "Zostales wylogowany"<<endl;
     system("pause");
 }
-void KsiazkaAdresowa::menu(){
+void KsiazkaAdresowa::menu() {
     char wybor;
-    while (true)
-    {
-        if (uzytkownikManager.pobierzIdZalogowanegoUzytkownika() == 0)
-        {
+    while (true) {
+        if (uzytkownikManager.pobierzIdZalogowanegoUzytkownika() == 0) {
 
             wybor = wybierzOpcjeZMenuGlownego();
 
-            switch (wybor)
-            {
+            switch (wybor) {
             case '1':
                 rejestracjaUzytkownika();
                 break;
             case '2':
                 logowanieUzytkownika();
                 break;
-                case '3':
+            case '3':
                 wypiszWszytskichUzytkownikow();
                 break;
             case '9':
@@ -54,21 +51,18 @@ void KsiazkaAdresowa::menu(){
                 system("pause");
                 break;
             }
-        }
-        else
-        {
+        } else {
             wybor =wybierzOpcjeZMenuUzytkownika();
-            switch (wybor)
-            {
+            switch (wybor) {
             case '1':
                 dodajAdresata();
                 break;
-           /* case '2':
-                wyszukajAdresatowPoImieniu(adresaci);
-                break;
-            case '3':
-                wyszukajAdresatowPoNazwisku(adresaci);
-                break;*/
+            /* case '2':
+                 wyszukajAdresatowPoImieniu(adresaci);
+                 break;
+             case '3':
+                 wyszukajAdresatowPoNazwisku(adresaci);
+                 break;*/
             case '4':
                 wyswietlWszystkichAdresatow();
                 break;
@@ -86,12 +80,11 @@ void KsiazkaAdresowa::menu(){
                 wylogowywanieUzytkownika();
                 break;
             }
-            }
+        }
     }
 }
 
-char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
-{
+char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
     char wybor;
 
     system("cls");
@@ -108,16 +101,15 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
     return wybor;
 }
 
-char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
-{
+char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
     char wybor;
 
     system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Dodaj adresata" << endl;
-   /* cout << "2. Wyszukaj po imieniu" << endl;
-    cout << "3. Wyszukaj po nazwisku" << endl;*/
+    /* cout << "2. Wyszukaj po imieniu" << endl;
+     cout << "3. Wyszukaj po nazwisku" << endl;*/
     cout << "4. Wyswietl adresatow" << endl;
     /*cout << "5. Usun adresata" << endl;
     cout << "6. Edytuj adresata" << endl;

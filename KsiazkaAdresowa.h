@@ -13,23 +13,23 @@
 
 using namespace std;
 
-class KsiazkaAdresowa{
- UzytkownikManager uzytkownikManager;
- AdresatManager adresatManager;
- public:
-     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami,string nazwaPlikuZAdresatami) : uzytkownikManager(nazwaPlikuZUzytkownikami), adresatManager(nazwaPlikuZAdresatami){
+class KsiazkaAdresowa {
+    UzytkownikManager uzytkownikManager;
+    AdresatManager adresatManager;
+public:
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami,string nazwaPlikuZAdresatami) : uzytkownikManager(nazwaPlikuZUzytkownikami), adresatManager(nazwaPlikuZAdresatami) {
         uzytkownikManager.wczytajUzytkownikowZPliku();
-     };
-     void rejestracjaUzytkownika();
-     void logowanieUzytkownika();
-     void wypiszWszytskichUzytkownikow();
-     void dodajAdresata();
-     void zmianaHaslaZalogowanegoUzytkownika();
-     void wyswietlWszystkichAdresatow();
-     void wylogowywanieUzytkownika();
-     void menu();
-     char wybierzOpcjeZMenuGlownego();
-     char wybierzOpcjeZMenuUzytkownika();
+    };
+    void rejestracjaUzytkownika();
+    void logowanieUzytkownika();
+    void wypiszWszytskichUzytkownikow();
+    void dodajAdresata();
+    void zmianaHaslaZalogowanegoUzytkownika();
+    void wyswietlWszystkichAdresatow();
+    void wylogowywanieUzytkownika();
+    void menu();
+    char wybierzOpcjeZMenuGlownego();
+    char wybierzOpcjeZMenuUzytkownika();
 
 };
 #endif

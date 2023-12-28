@@ -9,8 +9,6 @@
 #include "PlikZAdresatami.h"
 #include "MetodyPomocnicze.h"
 
-
-
 using namespace std;
 class AdresatManager {
     int idZalogowanegoUzytkownika;
@@ -21,9 +19,8 @@ class AdresatManager {
     void wyswietlDaneAdresata(Adresat adresat);
 
 public:
-    AdresatManager(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami){
-    };
-     void rejestracjaUzytkownika();
+    AdresatManager(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
+    void rejestracjaUzytkownika();
     void ustawIdZalogowanegoUzytkownika(int id);
     int pobierzIdZalogowanegoUzytkownika();
     void dodajAdresata();
@@ -31,9 +28,8 @@ public:
     void ustawIdOstatniegoAdresata(int id);
     int pobierzIdOstatniegoAdresata();
     void wczytajAdresatowZalogowanegoUzytkownika();
-   void wyswietlWszystkichAdresatow();
-   void wylogowywanieUzytkownika();
+    void wyswietlWszystkichAdresatow();
+    void wylogowywanieUzytkownika();
 
 };
-
 #endif

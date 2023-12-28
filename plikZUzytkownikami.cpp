@@ -59,8 +59,6 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
     }
     return uzytkownik;
 }
-
-
 vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku(){
     vector <Uzytkownik> uzytkownicy;
     Uzytkownik uzytkownik;

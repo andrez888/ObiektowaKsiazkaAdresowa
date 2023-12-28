@@ -8,8 +8,6 @@
 #include "uzytkownik.h"
 #include "MetodyPomocnicze.h"
 
-
-
 using namespace std;
 class PlikZUzytkownikami {
     const string nazwaPlikuZUzytkownikami;
@@ -19,10 +17,9 @@ class PlikZUzytkownikami {
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 public:
 
-    PlikZUzytkownikami(string plikZUzytkownikami) : nazwaPlikuZUzytkownikami(plikZUzytkownikami){};
+    PlikZUzytkownikami(string plikZUzytkownikami) : nazwaPlikuZUzytkownikami(plikZUzytkownikami) {};
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);
 };
-
 #endif
