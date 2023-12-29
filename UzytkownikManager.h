@@ -22,13 +22,15 @@ class UzytkownikManager {
     bool czyIstniejeLogin(string login);
 
 public:
+    UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami), idZalogowanegoUzytkownika(0) {};
     void ustawIdZalogowanegoUzytkownika(int id);
     int pobierzIdZalogowanegoUzytkownika();
-    UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami), idZalogowanegoUzytkownika(0) {};
+
     void rejestracjaUzytkownika();
     void wypiszWszytskichUzytkownikow();
     void wczytajUzytkownikowZPliku();
     void logowanieUzytkownika();
     void zmianaHasla();
+    bool czyUzytkownikJestZalogowany();
 };
 #endif

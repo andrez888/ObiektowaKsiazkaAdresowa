@@ -103,4 +103,11 @@ void UzytkownikManager::zmianaHasla() {
     system("pause");
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
+bool UzytkownikManager::czyUzytkownikJestZalogowany(){
+    if(idZalogowanegoUzytkownika > 0){
+        return true;
+    }else{
+        return false;
+    }
+}
 

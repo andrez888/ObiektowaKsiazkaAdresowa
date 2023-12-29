@@ -29,7 +29,7 @@ void KsiazkaAdresowa::wylogowywanieUzytkownika() {
 void KsiazkaAdresowa::menu() {
     char wybor;
     while (true) {
-        if (uzytkownikManager.pobierzIdZalogowanegoUzytkownika() == 0) {
+        if (!uzytkownikManager.czyUzytkownikJestZalogowany()) {
 
             wybor = wybierzOpcjeZMenuGlownego();
 
