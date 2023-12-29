@@ -28,7 +28,6 @@ public:
     int pobierzIdZalogowanegoUzytkownika();
     void rejestracjaUzytkownika();
     void dodajAdresata();
-   // int pobierzZPlikuIdOstatniegoAdresata();
    void wczytajAdresatowZalogowanegoUzytkownika();
     void wyswietlWszystkichAdresatow();
     void wylogowywanieUzytkownika();

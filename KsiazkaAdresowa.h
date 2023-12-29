@@ -3,7 +3,6 @@
 
 #include <iostream>
 
-
 #include "UzytkownikManager.h"
 #include "AdresatManager.h"
 #include "MetodyPomocnicze.h"

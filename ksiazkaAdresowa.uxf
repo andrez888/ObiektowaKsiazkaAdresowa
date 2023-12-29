@@ -128,7 +128,7 @@ wylogowywanieUzytkownika()::void</panel_attributes>
       <x>750</x>
       <y>0</y>
       <w>340</w>
-      <h>170</h>
+      <h>210</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
@@ -138,9 +138,10 @@ adresatManager:AdresatManager
 +KsiazkaAdresowa()
 +rejestracjaUzytkownika()::void
 +logowanieuzytkownika()::void
-+wypiszWszytskichUzytkownikow();
++wypiszWszytskichUzytkownikow()::void
 +dodajAdresata()::void
-+zmianaHaslaZalogowanegoUzytkownika()::void</panel_attributes>
++zmianaHaslaZalogowanegoUzytkownika()::void
++wylogowywanieUzytkownika()::void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
