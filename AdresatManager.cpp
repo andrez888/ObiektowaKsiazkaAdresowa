@@ -7,18 +7,13 @@ void AdresatManager::ustawIdZalogowanegoUzytkownika(int id) {
 int AdresatManager::pobierzIdZalogowanegoUzytkownika() {
     return idZalogowanegoUzytkownika;
 }
-void AdresatManager::ustawIdOstatniegoAdresata(int id) {
-    idOstatniegoAdresata = id;
-}
-int AdresatManager::pobierzIdOstatniegoAdresata() {
-    return idOstatniegoAdresata;
-}
+
 Adresat AdresatManager::podajDaneNowegoAdresata() {
     Adresat adresat;
 
-    adresat.ustawId(pobierzIdOstatniegoAdresata() + 1);
+    adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1);
 
-    adresat.ustawIdUzytkownika(pobierzIdZalogowanegoUzytkownika());
+    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
@@ -50,13 +45,11 @@ void AdresatManager::dodajAdresata() {
 
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
-    ustawIdOstatniegoAdresata(pobierzIdOstatniegoAdresata()+1);
 
 }
 void AdresatManager::wczytajAdresatowZalogowanegoUzytkownika() {
     if(idZalogowanegoUzytkownika!=0) {
-        ustawIdOstatniegoAdresata(plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata());
-        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(pobierzIdZalogowanegoUzytkownika());
+       adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
     }
 }
 void AdresatManager::wyswietlWszystkichAdresatow() {
@@ -83,5 +76,5 @@ void AdresatManager::wyswietlDaneAdresata(Adresat adresat) {
 }
 void AdresatManager::wylogowywanieUzytkownika() {
     adresaci.clear();
-    ustawIdZalogowanegoUzytkownika(0);
+    idZalogowanegoUzytkownika = 0;
 }
