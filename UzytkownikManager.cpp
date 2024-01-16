@@ -52,9 +52,6 @@ void UzytkownikManager::wypiszWszytskichUzytkownikow() {
     }
     system("pause");
 }
-void UzytkownikManager::wczytajUzytkownikowZPliku() {
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
 void UzytkownikManager::ustawIdZalogowanegoUzytkownika(int id ) {
     idZalogowanegoUzytkownika = id;
 }
