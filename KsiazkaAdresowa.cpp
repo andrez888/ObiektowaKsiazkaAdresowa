@@ -8,99 +8,35 @@ void  KsiazkaAdresowa :: wypiszWszytskichUzytkownikow() {
 }
 void KsiazkaAdresowa::logowanieUzytkownika() {
     uzytkownikManager.logowanieUzytkownika();
-    adresatManager.ustawIdZalogowanegoUzytkownika(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
-    adresatManager.wczytajAdresatowZalogowanegoUzytkownika();
+    if(uzytkownikManager.czyUzytkownikJestZalogowany()){
+        adresatManager = new AdresatManager(NAZWA_PLIKU_Z_ADRESATAMI , uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+    }
 }
 void KsiazkaAdresowa::dodajAdresata() {
-    adresatManager.dodajAdresata();
+    adresatManager->dodajAdresata();
 }
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
     uzytkownikManager.zmianaHasla();
 }
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
-    adresatManager.wyswietlWszystkichAdresatow();
+    adresatManager->wyswietlWszystkichAdresatow();
 }
 void KsiazkaAdresowa::wylogowywanieUzytkownika() {
-    adresatManager.wylogowywanieUzytkownika();
-    uzytkownikManager.ustawIdZalogowanegoUzytkownika(0);
+    uzytkownikManager.wylogowywanieUzytkownika();
+    delete adresatManager;
+    adresatManager = NULL;
+
     cout << "Zostales wylogowany"<<endl;
     system("pause");
 }
-void KsiazkaAdresowa::menu() {
-    char wybor;
-    while (true) {
-        if (!uzytkownikManager.czyUzytkownikJestZalogowany()) {
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany(){
 
-            wybor = wybierzOpcjeZMenuGlownego();
-
-            switch (wybor) {
-            case '1':
-                rejestracjaUzytkownika();
-                break;
-            case '2':
-                logowanieUzytkownika();
-                break;
-            case '3':
-                wypiszWszytskichUzytkownikow();
-                break;
-            case '9':
-                exit(0);
-                break;
-            default:
-                cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
-                system("pause");
-                break;
-            }
-        } else {
-            wybor =wybierzOpcjeZMenuUzytkownika();
-            switch (wybor) {
-            case '1':
-                dodajAdresata();
-                break;
-            /* case '2':
-                 wyszukajAdresatowPoImieniu(adresaci);
-                 break;
-             case '3':
-                 wyszukajAdresatowPoNazwisku(adresaci);
-                 break;*/
-            case '4':
-                wyswietlWszystkichAdresatow();
-                break;
-            /*case '5':
-                idUsunietegoAdresata = usunAdresata(adresaci);
-                idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
-                break;
-            case '6':
-                edytujAdresata(adresaci);
-                break;*/
-            case '7':
-                zmianaHaslaZalogowanegoUzytkownika();
-                break;
-            case '8':
-                wylogowywanieUzytkownika();
-                break;
-            }
-        }
+    if(uzytkownikManager.czyUzytkownikJestZalogowany()){
+        return true;
+    }else{
+        return false;
     }
 }
-
-char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
-    char wybor;
-
-    system("cls");
-    cout << "    >>> MENU  GLOWNE <<<" << endl;
-    cout << "---------------------------" << endl;
-    cout << "1. Rejestracja" << endl;
-    cout << "2. Logowanie" << endl;
-    cout << "3. Wypisz wszytskich uzytkownikow" << endl;
-    cout << "9. Koniec programu" << endl;
-    cout << "---------------------------" << endl;
-    cout << "Twoj wybor: ";
-    wybor = MetodyPomocnicze::wczytajZnak();
-
-    return wybor;
-}
-
 char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
     char wybor;
 
@@ -122,4 +58,19 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
 
     return wybor;
 }
+char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
+    char wybor;
 
+    system("cls");
+    cout << "    >>> MENU  GLOWNE <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Rejestracja" << endl;
+    cout << "2. Logowanie" << endl;
+    cout << "3. Wypisz wszytskich uzytkownikow" << endl;
+    cout << "9. Koniec programu" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+    wybor = MetodyPomocnicze::wczytajZnak();
+
+    return wybor;
+}

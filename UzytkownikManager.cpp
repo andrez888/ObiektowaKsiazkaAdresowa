@@ -33,7 +33,9 @@ int UzytkownikManager::pobierzIdNowegoUzytkownika() {
     else
         return uzytkownicy.back().pobierzId() + 1;
 }
-
+void UzytkownikManager::wylogowywanieUzytkownika(){
+    idZalogowanegoUzytkownika = 0;
+}
 bool UzytkownikManager::czyIstniejeLogin(string login) {
 
     for(size_t i = 0 ; i < uzytkownicy.size() ; i++) {

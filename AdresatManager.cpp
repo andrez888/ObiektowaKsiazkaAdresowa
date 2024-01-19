@@ -1,11 +1,8 @@
 #include "AdresatManager.h"
 
-void AdresatManager::ustawIdZalogowanegoUzytkownika(int id) {
-    idZalogowanegoUzytkownika = id;
 
-}
 int AdresatManager::pobierzIdZalogowanegoUzytkownika() {
-    return idZalogowanegoUzytkownika;
+    return ID_ZALOGOWANEGO_UZYTKOWNIKA;
 }
 
 Adresat AdresatManager::podajDaneNowegoAdresata() {
@@ -13,7 +10,7 @@ Adresat AdresatManager::podajDaneNowegoAdresata() {
 
     adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1);
 
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
@@ -47,11 +44,6 @@ void AdresatManager::dodajAdresata() {
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
 }
-void AdresatManager::wczytajAdresatowZalogowanegoUzytkownika() {
-    if(idZalogowanegoUzytkownika!=0) {
-       adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-    }
-}
 void AdresatManager::wyswietlWszystkichAdresatow() {
     system("cls");
     if (!adresaci.empty()) {
@@ -76,5 +68,5 @@ void AdresatManager::wyswietlDaneAdresata(Adresat adresat) {
 }
 void AdresatManager::wylogowywanieUzytkownika() {
     adresaci.clear();
-    idZalogowanegoUzytkownika = 0;
+
 }
