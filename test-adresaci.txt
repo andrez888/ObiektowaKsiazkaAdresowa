@@ -1,0 +1,2 @@
+1|2|marek|haj|456323|mar@||
+1|2|marek|haj|456323|mar@|gdansk|

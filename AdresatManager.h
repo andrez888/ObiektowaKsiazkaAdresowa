@@ -17,6 +17,7 @@ class AdresatManager {
 
     Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
+    int podajIdWybranegoAdresata();
 
 public:
 
@@ -31,7 +32,7 @@ public:
     void dodajAdresata();
    void wczytajAdresatowZalogowanegoUzytkownika();
     void wyswietlWszystkichAdresatow();
-    void wylogowywanieUzytkownika();
+   void usunAdresata();
 
 };
 #endif
