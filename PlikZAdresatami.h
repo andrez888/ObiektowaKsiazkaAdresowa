@@ -21,6 +21,7 @@ class PlikZAdresatami {
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     void zmienNazwePliku(string staraNazwa, string nowaNazwa);
     void usunPlik(string nazwaPlikuZRozszerzeniem);
+    void edytujWybranaLinieWPliku(int idEdytowanegoAdresata, string liniaZDanymi);
 
 public:
     PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {
@@ -31,5 +32,6 @@ public:
     vector <Adresat>  wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void dopiszAdresataDoPliku(Adresat adresat);
     void usunWybranegoAdresataZPliku(int idUsuwanegoAdresata);
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
 };
 #endif

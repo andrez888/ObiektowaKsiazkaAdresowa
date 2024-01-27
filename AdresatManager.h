@@ -18,6 +18,8 @@ class AdresatManager {
     Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
     int podajIdWybranegoAdresata();
+    char wybierzOpcjeZMenuEdycja();
+
 
 public:
 
@@ -33,6 +35,8 @@ public:
    void wczytajAdresatowZalogowanegoUzytkownika();
     void wyswietlWszystkichAdresatow();
    void usunAdresata();
+   void edytujAdresata();
+
 
 };
 #endif
