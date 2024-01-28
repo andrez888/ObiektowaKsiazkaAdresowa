@@ -21,11 +21,10 @@ class AdresatManager {
     char wybierzOpcjeZMenuEdycja();
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 
-
 public:
 
     AdresatManager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
-    :  ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika), plikZAdresatami(nazwaPlikuZAdresatami) {
+        :  ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika), plikZAdresatami(nazwaPlikuZAdresatami) {
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
 
@@ -33,11 +32,11 @@ public:
     int pobierzIdZalogowanegoUzytkownika();
     void rejestracjaUzytkownika();
     void dodajAdresata();
-   void wczytajAdresatowZalogowanegoUzytkownika();
+    void wczytajAdresatowZalogowanegoUzytkownika();
     void wyswietlWszystkichAdresatow();
-   void usunAdresata();
-   void edytujAdresata();
-   void wyszukajAdresatowPoNazwisku();
+    void usunAdresata();
+    void edytujAdresata();
+    void wyszukajAdresatowPoNazwisku();
     void wyszukajAdresatowPoImieniu();
 
 

@@ -8,8 +8,8 @@ void  KsiazkaAdresowa :: wypiszWszytskichUzytkownikow() {
 }
 void KsiazkaAdresowa::logowanieUzytkownika() {
     uzytkownikManager.logowanieUzytkownika();
-    if(uzytkownikManager.czyUzytkownikJestZalogowany()){
-        adresatManager = new AdresatManager(NAZWA_PLIKU_Z_ADRESATAMI , uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+    if(uzytkownikManager.czyUzytkownikJestZalogowany()) {
+        adresatManager = new AdresatManager(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
     }
 }
 void KsiazkaAdresowa::dodajAdresata() {
@@ -29,11 +29,11 @@ void KsiazkaAdresowa::wylogowywanieUzytkownika() {
     cout << "Zostales wylogowany"<<endl;
     system("pause");
 }
-bool KsiazkaAdresowa::czyUzytkownikJestZalogowany(){
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany() {
 
-    if(uzytkownikManager.czyUzytkownikJestZalogowany()){
+    if(uzytkownikManager.czyUzytkownikJestZalogowany()) {
         return true;
-    }else{
+    } else {
         return false;
     }
 }
@@ -45,7 +45,7 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
     cout << "---------------------------" << endl;
     cout << "1. Dodaj adresata" << endl;
     cout << "2. Wyszukaj po imieniu" << endl;
-     cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "3. Wyszukaj po nazwisku" << endl;
     cout << "4. Wyswietl adresatow" << endl;
     cout << "5. Usun adresata" << endl;
     cout << "6. Edytuj adresata" << endl;
@@ -74,15 +74,15 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
 
     return wybor;
 }
-void KsiazkaAdresowa::usunAdresata(){
+void KsiazkaAdresowa::usunAdresata() {
     adresatManager->usunAdresata();
 }
-void KsiazkaAdresowa::edytujAdresata(){
+void KsiazkaAdresowa::edytujAdresata() {
     adresatManager->edytujAdresata();
 }
-void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku(){
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku() {
     adresatManager->wyszukajAdresatowPoNazwisku();
 }
- void KsiazkaAdresowa::wyszukajAdresatowPoImieniu(){
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu() {
     adresatManager->wyszukajAdresatowPoImieniu();
- }
+}
