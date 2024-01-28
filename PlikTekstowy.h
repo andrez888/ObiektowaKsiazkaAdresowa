@@ -10,7 +10,7 @@ class PlikTekstowy{
 public:
     PlikTekstowy(string nazwaPliku) : NAZWA_PLIKU(nazwaPliku){}
 
-    bool czyPlikJestPusty(fstream &plikTekstowy);
+    bool czyPlikJestPusty();
     string pobierzNazwePliku();
 
 };
