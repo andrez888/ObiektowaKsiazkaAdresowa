@@ -37,6 +37,8 @@ public:
     char wybierzOpcjeZMenuUzytkownika();
     void usunAdresata();
     void edytujAdresata();
+    void wyszukajAdresatowPoNazwisku();
+    void wyszukajAdresatowPoImieniu();
 
 };
 #endif

@@ -19,6 +19,7 @@ class AdresatManager {
     void wyswietlDaneAdresata(Adresat adresat);
     int podajIdWybranegoAdresata();
     char wybierzOpcjeZMenuEdycja();
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 
 
 public:
@@ -36,6 +37,8 @@ public:
     void wyswietlWszystkichAdresatow();
    void usunAdresata();
    void edytujAdresata();
+   void wyszukajAdresatowPoNazwisku();
+    void wyszukajAdresatowPoImieniu();
 
 
 };
