@@ -14,11 +14,10 @@ Adresat AdresatManager::podajDaneNowegoAdresata() {
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
-    // adresat.imie = zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.imie);
+    adresat.ustawImie(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzImie()));
 
     cout << "Podaj nazwisko: ";
-    adresat.ustawNazwisko(MetodyPomocnicze ::wczytajLinie());
-    //adresat.nazwisko = zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.nazwisko);
+    adresat.ustawNazwisko(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(MetodyPomocnicze ::wczytajLinie()));
 
     cout << "Podaj numer telefonu: ";
     adresat.ustawNumerTelefonu(MetodyPomocnicze::wczytajLinie());

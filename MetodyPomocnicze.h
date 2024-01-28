@@ -1,7 +1,6 @@
 #ifndef METODYPOMOCNICZE_H
 #define METODYPOMOCNICZE_H
 
-#include <sstream>
 #include <iostream>
 #include <string>
 #include <sstream>
